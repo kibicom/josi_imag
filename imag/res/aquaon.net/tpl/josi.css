@@ -1,0 +1,407 @@
+/*
+        josi.css
+        
+        Copyright 2011 dnclive <dnclive@gmail.com>
+        
+*/
+
+/*** основные стили ***/
+
+.body_stl_smpl
+{
+	font-size: 14px;
+	font-family: Ubuntu,Verdana,sans-serif;
+}
+
+/*** список элементов ***/
+
+/*класс нода контейнера элементов*/
+.josi_list_stl_smpl
+{
+	width:100%;
+	height:100%;
+	overflow-y:scroll;
+	overflow-x:hidden;
+	overflow:visible;
+	 -moz-box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Для Firefox */
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Для Safari и Chrome */
+    box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Параметры тени */
+    cursor:pointer;
+    margin: 0 auto;
+	border: #999 solid 1px;
+}
+
+/*класс нода элемента списка*/
+.josi_list_item_stl_smpl
+{
+	font-family:Ubuntu,Verdana,sans-serif;
+	font-size: 100%;
+	padding: 3px 15px;
+	font-weight: bold;
+	color:#333;
+}
+
+.josi_list_item_1_stl_smpl
+{
+	font-family:Ubuntu,Verdana,sans-serif;
+	font-size: 100%;
+	#width:100%;
+	#height:35px;
+	#background:#fc9;
+	#margin:0px 1%;
+	margin:0 auto;
+	color:#333;
+	border-radius:3px;
+	overflow:hidden;
+	padding:5px;
+}
+
+.josi_list_item_1_alt_stl_smpl
+{
+	#background:#ffc;
+}
+
+/*класс нода элемента списка при перемещении указателя мыши*/
+.josi_list_item_hover_stl_smpl:hover
+{
+	color:#fff;
+	background:#0C0;
+}
+
+/*класс нода выбранного элемента списка*/
+.josi_list_item_selected_stl_smpl
+{
+	color: white;
+	background: #0C0;
+}
+
+/*** формы ввода ***/
+
+.josi_form_item_stl_smpl
+{
+	width: 95%;
+	#overflow:hidden;
+	padding: 2px;
+	#overflow: hidden;
+	#height: 33px;
+	#display:block;
+	margin: 0 auto;
+}
+
+/* бирки */
+
+.josi_form_item_label_div_stl_smpl
+{
+	width: 50%;
+}
+
+.josi_form_label_stl_smpl
+{
+	#font-weight:bold;
+	color:#333;
+	text-align:right;
+	font-size:18px;
+	padding:0px 5px 0px 5px;
+	#padding: 0px 10px 0px 0px;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.josi_form_label_col_stl_smpl
+{
+	#width:150px;
+}
+
+/* поля ввода */
+.josi_form_item_val_div_stl_smpl
+{
+	width: 50%;
+}
+
+.josi_form_input_div_stl_smpl
+{
+	#width:200px;
+	#height:30px;
+	font-size:18px;
+	font-weight:bold;
+	color:#333;
+	border: solid 1px #09F;
+	border-radius: 3px;
+	padding: 3px;
+}
+
+.josi_form_input_div_1_stl_smpl
+{
+	#width:150px;
+	#height:30px;
+	font-size:18px;
+	font-weight:bold;
+	color:#333;
+	border: solid 1px #09F;
+	border-radius: 3px;
+	padding: 3px;
+}
+
+
+/*** всплывающее окно команд ***/
+
+.popup_cmd_div_stl_smpl
+{
+	z-index:100; 
+	#width: 200px;
+	text-align: center;
+	position:absolute;
+}
+
+.popup_pointer_div_stl_smpl
+{
+	margin: 0 auto;
+	font-size: 0;
+	width: 0;
+	height: 0;
+	line-height: 0;
+	border-left:20px solid transparent;
+	border-right:20px solid transparent;
+	border-bottom: 20px solid #39C;
+}
+
+.popup_cmd_list_div_stl_smpl
+{
+	width: 98%;
+	height: 98%;
+	border-radius: 10px;
+	border: #39c solid 3px;
+	background: #39c;
+	-moz-box-shadow: 0 0 30px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 0 0 30px rgba(0,0,0,0.5);
+	box-shadow: 0 0 30px rgba(0,0,0,0.5);
+	cursor:pointer;
+}
+
+.popup_cmd_div_stl_smpl
+{
+	
+}
+
+.popup_cmd_stl_smpl
+{
+	margin:10px;
+	padding:10px;
+	color:white;
+	font-size:18px;
+	font-weight:bold;
+}
+
+.popup_cmd_stl_smpl:hover
+{
+	background:#0c0;
+	#color:#39c;
+	border-radius:5px;#6f6
+	#-moz-box-shadow: 0 0 30px rgba(0,0,0,0.5);
+	#-webkit-box-shadow: 0 0 30px rgba(0,0,0,0.5);
+	box-shadow: 0 0 30px rgba(0,0,0,0.5);
+	#box-shadow: 0 0 30px rgba(0,153,204,0.5);
+}
+
+
+/*Справа, указатель треугольник*/
+
+.jp_right_stl_smpl
+{
+	z-index:100; 
+	#width: 200px;
+	text-align: center;
+	position:absolute;
+}
+
+.jp_right_pointer_stl_smpl
+{
+	margin: 0 auto;
+	font-size: 0;
+	width: 0;
+	height: 0;
+	line-height: 0;
+	border-top: 20px solid transparent;
+	border-bottom: 20px solid transparent;
+	border-right: 20px solid #F33;
+	margin-top: 15px;
+	border-left: 0px;
+	z-index: 1000;
+	float: left;
+	position: relative;
+}
+
+.jp_right_frame_stl_smpl
+{
+	width: 98%;
+	height: 98%;
+	border-radius: 10px;
+	border: #F33 solid 3px;
+	background: #F33;
+	-moz-box-shadow: 0 0 30px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 0 0 30px rgba(0,0,0,0.5);
+	box-shadow: 0 0 30px rgba(0,0,0,0.5);
+	cursor: pointer;
+	width: 100px;
+	height: 100px;
+	float: left;
+}
+
+/*Справа, указатель уголок*/
+
+.jp_right_top_pointer_stl_smpl
+{
+	margin: 0 auto;
+	font-size: 0;
+	width: 0;
+	height: 0;
+	line-height: 0;
+	border-top: 10px solid #F33;
+	border-bottom: 10px solid transparent;
+	border-right: 10px solid #F33;
+	margin-top: 0px;
+	border-left: 10px solid transparent;
+	z-index: 1000;
+	float: left;
+	position: relative;
+}
+
+.jp_right_top_frame_stl_smpl
+{
+	width: 98%;
+	height: 98%;
+	border-radius: 0px 10px 10px 10px;
+	#border: #F33 solid 3px;
+	#background: #F33;
+	#border: #6c3 solid 3px;
+	background:#6c3;
+	background:#cc9;
+	background:#C33;
+	background:#f63;
+	background:#3C3;
+	background:#F60;
+	-moz-box-shadow: 0 0 30px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 0 0 30px rgba(0,0,0,0.5);
+	box-shadow: 0 0 30px rgba(0,0,0,0.5);
+	cursor: pointer;
+	float: left;
+	color: white;
+	padding: 10px;
+	font-size: 12pt;
+}
+
+
+
+/*** кнопки ***/
+
+.js_btn_div_stl_smpl
+{
+	margin:10px;
+	#height: 35px;
+	#width: 100%;
+	border-radius: 10px;
+}
+
+.js_btn_div_left_stl_smpl
+{
+	margin:10px;
+	height: 35px;
+	#width: 100%;
+	border-radius: 20px 3px 3px 20px;
+	#border-bottom-left-radius: 30px 15px;
+	#border-bottom-right-radius: 3px;
+	#border-top-left-radius: 30px 15px;
+	#border-top-right-radius: 3px;
+}
+
+.js_btn_close_div_stl_smpl
+{
+	border-radius: 40px;
+	#padding: 0px 5px;
+	color: white;
+	text-align: center;
+	#height: 35px;
+	font-size: 120%;
+}
+
+.js_green_btn_div_stl_smpl
+{
+	background: #0c0;
+}
+
+.js_sea_btn_div_stl_smpl
+{
+	background: #0cf;
+}
+
+.js_sea_btn_div_stl_smpl
+{
+	background: #39c;
+}
+
+.js_gray_btn_div_stl_smpl
+{
+	background:#ccc;
+}
+
+.js_brown_btn_div_stl_smpl
+{
+	background: #c93;
+}
+
+.js_red_btn_div_stl_smpl
+{
+	#background: #f99;
+	#background: #f66;
+	background: #f33;
+}
+
+.js_btn_div_stl_smpl:hover
+{
+	cursor:pointer;
+}
+
+.js_btn_label_stl_smpl
+{
+	padding: 10px;
+	color: white;
+	text-align: center;
+	#font-weight: bold;
+	font-size: 110%;
+}
+
+/*всплывающий список*/
+
+.popup_list_div
+{
+	position: absolute;
+	#width: 100%;
+	#height: 200px;
+	background: white;
+	z-index: 10;
+	border: solid 1px #09F;
+	padding: 3px;
+	-moz-box-shadow: 0 0 10px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 0 0 10px rgba(0,0,0,0.5);
+	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+
+}
+
+.popup_shadow_back
+{
+	display:none;
+	z-index:10;
+	position: absolute;
+	background: #000;
+	opacity:0.5;
+	width: 100%;
+	height: 100%;
+	top: 50%;
+	left: 50%;
+	margin: -50% -50%;
+	-moz-box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Для Firefox */
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Для Safari и Chrome */
+    #box-shadow: 0 0 1000px rgba(1,1,1,1); /* Параметры тени */
+	box-shadow: 0 0 100px 0px #000;
+}
+

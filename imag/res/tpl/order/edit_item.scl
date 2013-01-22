@@ -1,0 +1,19 @@
+/*
+ * edit_item.scl
+ * 
+ * Copyright 2012 Жлобенцев Владимир <dnclive@gmail.com>
+ * 
+ * Пследовательность команд редактирования элементов
+ * 
+ */
+
+
+
+
+f:struct_drop^struct_res_key:form.[[f:kvl_1_mix_val^mix_key:service_name]].[[f:kvl_1_mix_val^mix_key:service_res_name]]>
+
+[[f:tpl^tpl_res_key:&tpl_path:tpl/[[f:kvl_1_mix_val^mix_key:service_name]]/fill_form_from_struct.scl&drop_comment:true&context_struct_key:selected&parse_arr:false&node_class_query:]]
+
+f:fill_form_from_struct_res^struct_res_key:form.[[f:kvl_1_mix_val^mix_key:service_name]]&class_query:.josi_store_get_div>
+
+

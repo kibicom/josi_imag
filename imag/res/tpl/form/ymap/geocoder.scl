@@ -1,0 +1,12 @@
+/*
+ * geocoder.scl
+ * 
+ * Copyright 2012 Жлобенцев Владимир <dnclive@gmail.com>
+ * 
+ * Запрашивает географические объекты из yandex geocoder 
+ * 
+ */
+
+
+<!-- Запрашиваем варианты для текущего запроса -->
+ev:{keydown}^f:ymap_geocoder^y:x>

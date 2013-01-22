@@ -1,0 +1,39 @@
+<!--
+		logout_href.html
+        
+        Copyright 2011 dnclive <dnclive@gmail.com>
+        
+
+-->
+
+
+<div 	
+			data-josi-ev-resp="click" 
+			data-josi-ev-stop=true 
+			data-josi-kvl-str="f:waiter_show>
+			f:form_popup_list_show>
+			f:res_struct_req^req_res_name:res/where/tab_org_unit_all&place_from:tab_org_unit_all&place_to:where.tab_org_unit_arr.tab_org_unit&replace:false>
+			f:josi_store_trans^place_to:struct_get_arr.tab_org_unit_arr.tab_org_unit&get_dot_key:where.tab_org_unit_arr.tab_org_unit&replace:false>
+			f:tpl_by_root_node^tpl_path:tpl/form_popup_item_list.tpl&node_class:.popup_list_div&struct_res_key:struct_get_arr.tab_org_unit_arr.tab_org_unit&where_key:where.tab_org_unit.0.name&replace:false>
+			f:waiter_hide">
+		<div class="div_right service_top_item" style="">
+			
+			<div >
+				<div class="service_top_item_label">{{f:login_name}}</div>
+			</div>
+			<div 	class="popup_list_div v_scroll hidden"
+				style="float: right;width_: 200px;position: relative;overflow_: hidden;left_: auto;height: 100px;">
+				<div 	class="form_popup_list_item_div">
+					<a href="{{f:resource_root}}/webproj/auth/index.php?
+				kvl.0.f=logout&kvl.1.redirect_uri='{{f:request_uri}}'" class="service_top_a" style="color:#333">
+						<div class="form_popup_item_div div_left josi_val_bold form_popup_item_val">Выйти</div>
+					</a>
+
+				</div>
+			</div>
+			
+		</div>
+		
+		
+	</div>
+

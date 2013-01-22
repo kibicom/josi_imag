@@ -1,0 +1,399 @@
+
+<!--
+        service
+        
+        Copyright 2012 Жлобенцев Владимир <dnclive@gmail.com>
+        
+        Сервис JoSi.
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//RU"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru">
+
+<head>
+	<title>JoSi</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<meta name="generator" content="Geany 0.20" />
+	
+	<link rel="stylesheet" type="text/css" href="res/tpl/main.css">
+	<link rel="stylesheet" type="text/css" href="res/tpl/payment.css">
+	<link rel="stylesheet" type="text/css" href="res/tpl/service_top/service_top.css">
+	
+	<link rel="stylesheet" type="text/css" href="res/tpl/payment.css">
+	<link rel="stylesheet" type="text/css" href="res/tpl/order.css">
+	<link rel="stylesheet" type="text/css" href="res/tpl/josi.css">
+	<link rel="stylesheet" type="text/css" href="res/tpl/josi_store.css">
+	<link rel="stylesheet" type="text/css" href="res/tpl/waiter/waiter.css">
+	<link rel="stylesheet" type="text/css" href="res/tpl/service_top/service_top.css">
+	<link rel="stylesheet" type="text/css" href="res/tpl/toolbar/toolbar.css">
+	<link rel="stylesheet" type="text/css" href="res/tpl/service_store.css">
+	<link rel="stylesheet" type="text/css" href="res/tpl/beon.css">
+	
+	<link rel="stylesheet" type="text/css" href="../dojo/dijit/themes/claro/claro.css">
+	<!--link rel="stylesheet" type="text/css" href="../jquery/css/ui-lightness/jquery-ui-1.8.18.custom.css"-->
+	
+	
+	<script>
+		var dojoConfig = 
+		{
+			async:true,
+			isDebug:true,
+			//cacheBust:new Date(),
+			//cacheBust:new Date("10.10.10"),
+			cacheBust:false,
+			parseOnLoad: true,
+			locale:'ru',
+			waitSeconds:5,
+			paths:
+			{
+				"tlib":"../tlib",
+				"res":"../../beon/res",
+			},
+		};
+	</script>
+	
+	<script src="../dojo/dojo/dojo.js"></script>
+	
+	<!--script type="text/javascript" src="https://www.google.com/jsapi"></script>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	
+	<script>
+		google.load("jquery", "1.7.1");
+		google.load("jqueryui", "1.8.16");
+	</script>
+	<script src="http://jquery-ui.googlecode.com/svn/trunk/ui/i18n/jquery.ui.datepicker-ru.js"></script>
+	<script>
+		google.load("jquery", "1.7.1");
+		google.load("jqueryui", "1.8.16");
+	</script>
+	
+	<!--script src="dojo/tlib/imag.js"></script-->
+	
+	<script>
+	
+		
+		var unjax=null;
+		var josi_store=null;
+		var store=null;
+		var struct_res_arr=null;		//структурные ресурсы
+		var task_arr=null;
+		
+		var dojo_console=console;
+		
+		var console=
+		{
+			//deb_group:"josi_store",
+			//deb_group:"ttask",
+			//deb_group:"josi_form",
+			//deb_group:"inject_if_empty",
+			//deb_group:"popup",
+			//deb_group:"trans",
+			//deb_group:"sti_report",
+			//deb_group:"struct_req",
+			//deb_group:"select_item",
+			//deb_group:"popup",
+			//deb_group:"tpl_struct_arr",
+			//deb_group:"require",
+			//deb_group:"map_reduce",
+			//deb_group:"tcalc",
+			//deb_group:"tcalc_2",
+			//deb_group:"f_struct_val",
+			//deb_group:"task_kvl",
+			//deb_group:"tpl_kvl_1_mix",
+			//deb_group:"target_node",
+			//deb_group:"fill_item_by_form_val_arr",
+			//deb_group:"fill_form_from_struct_res",
+			//deb_group:"josi_store_trans",
+			//deb_group:"sti_report",
+			//deb_group:"jq_datepicker",
+			//deb_group:"jq_datepicker",
+			//deb_group:"ev",
+			//deb_group:"ev_keydown",
+			//deb_group:"filter_node_list",
+			//deb_group:"task",
+			//deb_group:"trans",
+			//deb_group:"tpl_3",
+			//deb_group:"tpl_4",
+			//deb_group:"task_2",
+			deb_group:"click_ev",
+			
+			log:function()
+			{
+				//dojo_console.log(this, arguments);
+				var self=this;
+				
+				if (arguments[0]!=self.deb_group&&self.deb_group!="")
+				{
+					return;
+				}
+				
+				dojo_console.log(arguments);
+				return;
+				var i=1;
+				while(i<arguments.length)
+				//for(var i=0;i<arguments.length;i++) 
+				{
+					var arg=arguments[i];
+					
+					
+					
+					i++;
+					//alert("arguments["+i+"] = "+arguments[i]);
+				}
+				
+				return;
+			}
+		}
+		
+		
+		require(
+		[	
+			"dojo",
+			//"dojo/_base/fx",
+			"dijit/dijit",
+			"dojo/i18n!dijit/form/nls/validate",
+			"dijit/Calendar",
+			"tlib/tuti", 
+			"tlib/tkvl",
+			"tlib/tstore",
+			//"tlib/imag",
+			"tlib/tunjax",
+			"tlib/tpl",
+			"tlib/josi_store",
+			"tlib/tjosi_store_emiter",
+			//"tlib/thash",
+			"tlib/ttask",
+			//"tlib/tjosi_form",
+			"tlib/tres",
+		],
+		function(
+			dojo,
+			//t_fx,
+			t_dijit,
+			i18n,
+			t_calendar,
+			t_uti, 
+			t_kvl, 
+			t_store, 
+			//t_imag, 
+			t_unjax, 
+			t_tpl, 
+			t_josi_store,
+			t_josi_store_emiter, 
+			//t_thash,
+			t_task,
+			//t_josi_form,
+			t_res)
+		{
+			console.log(123);
+			
+			console.log(i18n.invalidMessage);
+			
+			//alert(dojo);
+			//require.log(dojo);
+			
+			//return;
+			
+			var source="https://localhost/webproj/lurelle.ru/index.php";
+			var source="index.php";
+			
+			//инициализация ресурсов
+			struct_res_arr=t_res.f_new_struct_res_arr();
+			
+			t_res.f_set_def_struct_res_arr({struct_res_arr:struct_res_arr});
+			
+			t_res.f_set_josi_store_url({josi_store_url:"index.php"});
+			
+			/*
+			t_res.f_struct_req(
+			{
+				//struct_res_arr:struct_res_arr,
+				req_res_name:"res/where/tab_org_unit",
+				req_res_key:"",
+				struct_res_key:"where",
+			});
+			*/
+			
+			t_res.f_place(
+			{
+				struct_res_arr:struct_res_arr,
+				req_res_name_arr:
+				[
+					//"res/where/tab_org_unit",
+					////"res/where/tab_sale_office",
+					//"res/where/tab_people",
+					//"res/where/tab_wd_prof_sys",
+				],
+				place_from:"",
+				place_to:"where",
+				fdone:function(args)
+				{
+					console.log(args);
+					return;
+				}
+			});
+			
+			console.log("RES",struct_res_arr);
+			
+			//return;
+			
+			//источник данных
+			store=new t_store({source:source});
+			//модуль каталога магазина imag
+			t_josi_store.constructor({store:store});
+			
+			
+			josi_store=t_josi_store;
+			
+
+			
+			//тестируем tkvl
+			//kvl=new tlib.tkvl();
+			
+			//работа с хешем
+			//hash=tlib.thash();
+			
+			//waiter=tlib.twaiter();
+			
+			//tpl=tlib.tpl({store:store});
+			
+			console.log(t_tpl);
+			
+			t_tpl.constructor({store:store});
+			
+			//t_imag_emiter.constructor({imag:imag});
+			
+			t_josi_store_emiter.constructor({josi_store:t_josi_store});
+			
+			//return;
+			
+			//console.log(hash.fhash_get_arr());
+			
+			console.log(t_task);
+			
+			unjax=t_unjax(
+			{
+				store:store,
+				emiter:t_josi_store_emiter,
+				kvl:t_kvl,
+				tick_time:100,
+				start_when_ready:true,
+				task_arr:t_task.fcre_task_arr(),
+			});
+			
+			/*
+			//каталог по умолчанию
+			t_hash.fhash_set_arr_kvl(
+			{
+				hash_arr:t_hash.fhash_get_arr(),
+				hash_kvl_str:"f:cat_build^f:f_cat_build&id:0",
+				modify:false,
+				add:true,
+			});
+			*/
+			
+			/*
+			t_josi_form.f_prepare_form(
+			{
+				form_node:dojo.query(".josi_store_get_div"),
+			});
+			*/
+			
+			console.log(unjax.f_task_arr());
+			
+			
+			t_task.f_put(
+			{
+				task_arr:unjax.f_task_arr(),
+				new_task:
+				{
+					//kvl_str:"f:josi_store_get",
+					kvl_str:"f:build_page",
+					is_active:true,
+					emit_once:true,
+					del_after_emit:true,
+					in_hash:true,
+				},
+				modify:false,
+				add:true,
+			});
+			
+			//t_josi_store.f_build_page();
+			
+			/*
+			t_task.f_put(
+			{
+				task_arr:unjax.f_task_arr(),
+				new_task:
+				{
+					//kvl_str:"f:josi_store_get",
+					kvl_str:"f:build_page",
+					is_active:true,
+					emit_once:true,
+					del_after_emit:true,
+					in_hash:true,
+				},
+				modify:false,
+				add:true,
+			});
+			*/
+			console.log(t_uti.f_is_empty(123), t_kvl);
+			
+			return ;
+			//var uti_var=new uti();
+			console.log(uti, uti_var.f_is_empty,uti_var.args);
+			console.log(dojo);
+			//dojo.console.log(dojo);
+			
+			
+			
+		});
+	
+	</script>
+	
+
+
+</head>
+
+<body 	data-josi-kvl-str="
+			f:waiter_show>
+			f:tpl_struct_arr^tpl_path:{{f:show_val^service&key:service}}&node_class_query:.service_div&struct_res_key:res&parse_arr:false&replace:true&rooted:false&append:false&parse_arr:false>
+			
+			f:waiter_hide"
+		data-josi-ev-resp="load"
+		class="claro">
+	
+	<textarea class="trans_resp hidden">
+	
+	</textarea>
+	
+	<div class="service_div">
+	
+	</div>
+	
+	<div 	class="popup_cmd_div hidden" 
+			data-josi-ev-resp="click" 
+			data-josi-kvl-str="f:popup_list_hide^popup_class_name:.popup_cmd_div">
+		<div class="popup_pointer_div">
+		</div>
+		<div class="popup_cmd_list_div">
+		</div>
+	</div>
+	
+	<div class="waiter_div hidden">
+		<div style="overflow: hidden;
+					margin: 0 auto;
+					width: 140px;
+					text-align: center;">
+			<div style="float:left">Загрузка</div>
+			<img src="res/tpl/waiter/26.gif" style="float: left;
+												height: 30px;
+												padding: 0px 0px 0px 5px;"/>
+		</div>
+	</div>
+	
+</body>
+
+</html>

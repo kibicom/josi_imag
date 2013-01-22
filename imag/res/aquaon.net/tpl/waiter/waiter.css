@@ -1,0 +1,29 @@
+/*
+	waiter.css
+        
+    Copyright 2012 Жлобенцев Владимир <dnclive@gmail.com>
+	
+*/
+
+.waiter_div
+{
+	position: fixed;
+	width: 16%;
+	#height: 5%;
+	z-index: 10000;
+	top: 0;
+	left: 42%;
+	background: #903;
+	padding: 10px;
+	text-align: center;
+	#border: solid 2px #903;
+	border-radius: 5px;
+	-moz-box-shadow: 0 0 10px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 0 0 20px rgba(0,0,0,0.5);
+	box-shadow: 0 0 20px rgba(0,0,0,0.5);
+	color: white;
+	font-size: 22px;
+	background: #999;
+	#background: white;
+	#background: #966;
+}

@@ -1,0 +1,215 @@
+/*
+        auth.css
+        
+        Copyright 2011 dnclive <dnclive@gmail.com>
+        
+        This program is free software; you can redistribute it and/or modify
+        it under the terms of the GNU General Public License as published by
+        the Free Software Foundation; either version 2 of the License, or
+        (at your option) any later version.
+        
+        This program is distributed in the hope that it will be useful,
+        but WITHOUT ANY WARRANTY; without even the implied warranty of
+        MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+        GNU General Public License for more details.
+        
+        You should have received a copy of the GNU General Public License
+        along with this program; if not, write to the Free Software
+        Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+        MA 02110-1301, USA.
+*/
+
+
+/*форма входа*/
+
+.login_form_div
+{
+	width: 80%;
+    margin: 0 auto;
+}
+
+.login_form
+{
+	margin: 0 auto;
+	width: 90%;
+	text-align: center;
+	top: 3%;
+	position: relative;
+	#border: 3px #F60 solid;
+	border-radius: 20px;
+	padding: 3%;
+}
+
+
+/*форма регистрации*/
+
+.label
+{
+	color:#999;
+	text-align:center;
+	padding:0 0 0 0;
+	font-size: 25px;
+}
+
+.form_value
+{
+	font-size: 30px;
+	background: white;
+	border: solid 1px #09F;
+	#color: white;
+	border-radius: 3px;
+	text-align: center;
+	width: 80%;
+}
+
+.login_button
+{
+	background: green;
+	color: white;
+	padding: 10px;
+	margin: 0 auto;
+	width:30%;
+}
+
+/*кнопка основного дейвствия*/
+.main_action_button_stl_smpl_1
+{
+	background: #0C0;
+	color: white;
+	padding: 10px;
+	margin: 0 auto;
+	width:35%;
+	border-radius:9px;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.main_action_button_stl_smpl_2
+{
+	background: #0C0;
+	color: white;
+	padding: 10px;
+	margin: 0 auto;
+	width:35%;
+	border-radius:9px;
+	font-size: 20px;
+	font-weight: bold;
+	background: #0C0;
+	background: #70CC70;
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzcwY2M3MCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUxJSIgc3RvcC1jb2xvcj0iIzI4Y2MyOCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMGNjMDAiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(112, 204, 112, 1)), color-stop(51%,rgba(40, 204, 40, 1)), color-stop(100%,rgba(0, 204, 0, 1)));
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#70cc70', endColorstr='#00cc00',GradientType=0 );
+}
+
+.main_action_button:hover
+{
+	cursor:pointer;
+}
+
+/*кнопка второстепенного действия*/
+.minor_action_button_stl_smpl
+{
+	width:90%;
+	#background: #999;
+	background:#f60;
+	color: white;
+	padding: 5px;
+	margin: 0 auto;
+	border-radius:9px;
+}
+
+.minor_action_button_stl_smpl_2
+{
+	width:90%;
+	#background: #999;
+	background:#f60;
+	color: white;
+	padding: 5px;
+	margin: 0 auto;
+	border-radius:9px;
+	background: #0CF;
+	background: #7ABCFF;
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzdhYmNmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjQ0JSIgc3RvcC1jb2xvcj0iIzYwYWJmOCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM0MDk2ZWUiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(122, 188, 255, 1)), color-stop(44%,rgba(96, 171, 248, 1)), color-stop(100%,rgba(64, 150, 238, 1)));
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7abcff', endColorstr='#4096ee',GradientType=0 );
+}
+
+
+
+.minor_action_button:hover
+{
+	cursor:pointer;
+}
+.minor_action_a
+{
+	padding:3% 30%;
+	color:white;
+	text-decoration: none;	
+}
+.minor_action_a:hover
+{
+	padding:3% 30%;
+	color:white;
+	text-decoration: none;	
+}
+.minor_action_a:visited
+{
+	padding:3% 30%;
+	color:white;
+	text-decoration: none;	
+}
+
+.main_form
+{
+	margin: 0 auto;
+	width: 30%;
+	text-align: center;
+	top:3%;
+	position:relative;
+	border: 3px #F60 solid;
+	border-radius:20px;
+	padding:3%;
+}
+
+.form_item
+{
+	padding:10px;
+}
+
+/*** Подтверждение регистрации ***/
+
+.confirm_div
+{
+	margin: 0 auto;
+	width: 70%;
+	text-align: center;
+	top:3%;
+	position:relative;
+	border: 3px #F60 solid;
+	border-radius:20px;
+	padding:3%;
+}
+
+.confirm_text
+{
+	color:#333;
+	text-align:justify;
+	padding:10px 10px 30px 10px;
+	font-size: 25px;
+}
+
+/*** ошибки предупреждения ***/
+
+.error_form
+{
+	margin: 0 auto;
+	#width: 100%;
+	text-align: center;
+	top:3%;
+	position:relative;
+	border: 3px red solid;
+	border-radius:20px;
+	padding:3%;
+}
+
+

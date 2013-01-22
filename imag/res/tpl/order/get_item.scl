@@ -1,0 +1,33 @@
+/*
+ * get_item.scl
+ * 
+ * Copyright 2012 Жлобенцев Владимир <dnclive@gmail.com>
+ * 
+ * Пследовательность команд получения элементов структуры с сервера по запросу
+ * 
+ * Шаблон парсится на клиенте
+ * Параметры
+ * 		service_name - название сервиса - используется как контекст для хранения данных формы в ресурсах
+ * 		service_res_name - название ресурса сервиса - используется как название запросов
+ * 		
+ * 
+ */
+
+
+<!--запрашиваем структуру запроса-->
+f:res_struct_req^req_res_name:res/struct_get_query_arr/[[f:kvl_1_mix_val^mix_key:service_name]]/[[f:kvl_1_mix_val^mix_key:service_res_name]]&place_from:[[f:kvl_1_mix_val^mix_key:service_res_name]]&place_to:struct_get_query_arr.[[f:kvl_1_mix_val^mix_key:service_name]].[[f:kvl_1_mix_val^mix_key:service_res_name]]&replace:true>
+
+<!-- загружаем команды заполнения структуры данными формы-->
+[[f:tpl^tpl_path:tpl/[[f:kvl_1_mix_val^mix_key:service_name]]/fill_struct_from_form.scl&place_from_context_key:form.[[f:kvl_1_mix_val^mix_key:service_name]]&place_to_context_key:struct_get_query_arr.[[f:kvl_1_mix_val^mix_key:service_name]].[[f:kvl_1_mix_val^mix_key:service_res_name]]	.0&drop_comment:true&node_class_query:]]
+
+<!--берем id контекста, если мы должны показать только элементы связанные с выбранным элементом контекста-->
+f:struct_val_set&if_exp: '[[f:kvl_1_mix_val^mix_key:relat_id_val]]' != '' ^val:[[f:kvl_1_mix_val^mix_key:relat_id_val]]&struct_res_key:struct_get_query_arr.[[f:kvl_1_mix_val^mix_key:service_name]].[[f:kvl_1_mix_val^mix_key:service_res_name]][[f:kvl_1_mix_val^mix_key:relat_id_key]]>
+
+<!--отправляем запрос на сервер получаем результат-->
+f:josi_store_trans^metod:POST&place_to:struct_get_arr.[[f:kvl_1_mix_val^mix_key:service_name]].[[f:kvl_1_mix_val^mix_key:service_res_name]]&get_dot_key:struct_get_query_arr.[[f:kvl_1_mix_val^mix_key:service_name]].[[f:kvl_1_mix_val^mix_key:service_res_name]]&replace:true>
+
+<!--выводим элементы в шаблоне в список-->
+f:tpl^tpl_path:tpl/[[f:kvl_1_mix_val^mix_key:service_name]]/list/item.tpl&node_class_query:[[f:kvl_1_mix_val^mix_key:item_list_node_class_query&def_val:.josi_store_sub_item_arr_div]]&struct_res_key:struct_get_arr.[[f:kvl_1_mix_val^mix_key:service_name]].[[f:kvl_1_mix_val^mix_key:service_res_name]]&replace:true&append:false&service_name:[[f:kvl_1_mix_val^mix_key:service_name]]&service_res_name:[[f:kvl_1_mix_val^mix_key:service_res_name]]&context_service_name:[[f:kvl_1_mix_val^mix_key:context_service_name]]&context_service_res_name:[[f:kvl_1_mix_val^mix_key:context_service_res_name]]&relat_id_key:[[f:kvl_1_mix_val^mix_key:relat_id_key]]&relat_id_val:[[f:kvl_1_mix_val^mix_key:relat_id_val]]>
+
+<!--раскрашиваем четные-нечетные-->
+f:item_list_alt^item_class_query:.josi_store_item_div&alt_class:order_item_div_alt>

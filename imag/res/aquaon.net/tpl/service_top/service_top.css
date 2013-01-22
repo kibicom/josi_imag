@@ -1,0 +1,103 @@
+/*
+	payment.html
+        
+    Copyright 2012 Жлобенцев Владимир <dnclive@gmail.com>
+	
+*/
+
+
+.service_top
+{
+	#height:9%;
+	#background: #9F6;
+	#background: #ccf;
+	background: #699;
+	background: #f60;
+	height:40px;
+	#background: #999;
+	#overflow: hidden;
+	margin-bottom: 1%;
+	-moz-box-shadow: 0 0 10px rgba(0,0,0,0.5);
+	-webkit-box-shadow: 0 0 10px rgba(0,0,0,0.5);
+	box-shadow: 0 0 10px 0px #999;
+}
+
+.service_top_item
+{
+	padding: 0px;
+	#color: #fff;
+	height:40px;
+	text-align: center;
+	#font-weight: bold;
+	#font-size: 16px;
+	#margin: 10px;
+	#height: 35px;
+	#background: #9F6;
+	#background: #ccf;
+	#border-radius: 10px;
+	cursor:pointer;
+}
+
+.service_top_item:hover
+{
+	background: #366;
+	#background: #f60;
+	#background: #0c0;
+	#background: #999;
+	#border-radius: 10px;
+}
+
+.service_top_item_flash
+{
+	padding: 0px;
+	#color: #fff;
+	height:40px;
+	text-align: center;
+	#font-weight: bold;
+	#font-size: 16px;
+	#margin: 10px;
+	#height: 35px;
+	background: #39c;
+	background: #f60;
+	#border-radius: 10px;
+	cursor:pointer;
+}
+
+.service_top_item_flash:hover
+{
+	background: #366;
+	#background: #f60;
+	#background: #0c0;
+	#background: #999;
+	#border-radius: 10px;
+}
+.service_top:hover
+{
+	background: #366;
+	background: #f60;
+	#background: #0c0;
+	#border-radius: 10px;
+}
+
+
+.service_top_item_label
+{
+	padding: 10px;
+	color: #fff;
+	text-align: center;
+	font-weight: bold;
+	font-size: 16px;
+	#margin: 10px;
+	#height: 35px;
+	#background: #9F6;
+	#background: #ccf;
+	#border-radius: 10px;
+}
+
+/*service_top ссылки*/
+
+.service_top a
+{
+	text-decoration: none;
+	color:white;
+}

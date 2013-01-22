@@ -1,0 +1,73 @@
+/*
+	order.css
+        
+    Copyright 2012 Жлобенцев Владимир <dnclive@gmail.com>
+	
+*/
+
+.order_item_div
+{
+	#width:98%;
+	#height:35px;
+	background:#fc9;
+	#margin:0px 1%;
+	color:#333;
+	border-radius:3px;
+	overflow:hidden;
+}
+
+.order_item_div_alt
+{
+	background:#ffc;
+}
+
+.order_item_div_selected
+{
+	color:#fff;
+	background:#0c0;
+	background:#3c3;
+}
+
+.order_item_val_div
+{
+	#width:150px;
+	#height:30px;
+	font-size:18px;
+	#font-weight:bold;
+	#color:#333;
+	#border: solid 1px #09F;
+	#border-radius: 3px;
+	padding: 3px 15px;
+	overflow:hidden;
+}
+
+.font_bold
+{
+	font_weight:bold;
+}
+
+.org_unit_select_list
+{
+
+}
+
+.sm_val_div_stl_smpl_1
+{
+	text-align:right;
+	color: #0B0;
+	font-size: 22px;
+}
+
+.josi_store_item_div_selected 
+{
+	color: white;
+	background: #0C0;
+}
+
+.josi_store_item_div_deleted 
+{
+	background: red;
+	color: white;
+}
+
+

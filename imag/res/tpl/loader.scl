@@ -1,0 +1,39 @@
+/*
+ * loader.scl
+ * 
+ * Copyright 2012 Жлобенцев Владимир <dnclive@gmail.com>
+ * 
+ * Пследовательность команд загрузки сервиса Замеры
+ * 
+ */
+
+
+<!-- Загружаем шаблон формы сервиса -->
+f:tpl^tpl_res_key:&tpl_path:tpl/[[f:kvl_1_mix_val^mix_key:service_name]]/form.tpl&node_class_query:.content_div&parse_arr:false&replace:true&rooted:false&append:false&service_name:[[f:kvl_1_mix_val^mix_key:service_name]]&service_res_name:[[f:kvl_1_mix_val^mix_key:service_res_name]]&item_list_node_class_query:[[f:kvl_1_mix_val^mix_key:item_list_node_class_query]]>
+
+<!-- Парсим колендари -->
+f:build_jquery_datepicker^class_query:.jquery_datepicker>
+
+<!-- Загрузка запроса команд пользователя -->
+f:res_struct_req^req_res_name:res/where/tab_josi_form_cmd&place_from:tab_josi_form_cmd&place_to:where.tab_josi_form_cmd&replace:false>
+
+<!-- Загрузка команд пользователя -->
+f:josi_store_trans^place_to:struct_get_arr.tab_josi_form_cmd&get_dot_key:where.tab_josi_form_cmd&replace:false>
+
+<!-- Загрузка запроса ресурса сервиса (загружаем сейчас для кеширования) -->
+f:res_struct_req^req_res_name:res/where/tab_org_unit&place_from:tab_org_unit&place_to:where.tab_org_unit&replace:true>
+
+/*
+<!-- Загружаем запрос ресурса(serivce_res_name) сервиса(service_name) -->
+f:res_struct_req^req_res_name:res/struct_get_query_arr/[[f:kvl_1_mix_val^mix_key:service_name]]/[[f:kvl_1_mix_val^mix_key:service_res_name]]&place_from:[[f:kvl_1_mix_val^mix_key:service_res_name]]&place_to:struct_get_query_arr.[[f:kvl_1_mix_val^mix_key:service_name]].[[f:kvl_1_mix_val^mix_key:service_res_name]]&replace:true>
+
+<!-- Выполняем запрос -->
+f:josi_store_trans^place_to:struct_get_arr.[[f:kvl_1_mix_val^mix_key:service_name]].[[f:kvl_1_mix_val^mix_key:service_res_name]]&get_dot_key:struct_get_query_arr.[[f:kvl_1_mix_val^mix_key:service_name]].[[f:kvl_1_mix_val^mix_key:service_res_name]]&replace:true>
+
+<!-- Парсим полученные элементы -->
+f:tpl^tpl_res_key:&tpl_path:tpl/[[f:kvl_1_mix_val^mix_key:service_name]]/list/item.tpl&node_class_query:.js_form_main_list&struct_res_key:struct_get_arr.[[f:kvl_1_mix_val^mix_key:service_name]].[[f:kvl_1_mix_val^mix_key:service_res_name]]&replace:true&append:false>
+
+<!-- Помечаем четные нечетные строки -->
+f:item_list_alt^item_class_query:.josi_store_item_div&alt_class:order_item_div_alt>
+*/
+

@@ -1,0 +1,104 @@
+
+<!--
+        beon.tpl
+        
+        Copyright 2012 Жлобенцев Владимир <dnclive@gmail.com>
+        
+        Основной шаблон BeOn
+-->
+
+<div class="head hidden">
+	{{f:tpl^page_path:res/tpl/service_top/service_top.tpl}}
+</div>
+
+<div class="content" style="height: 100%;overflow: hidden;width: 100%; margin:0 auto">
+	<div class="" style="width:100%;overflow: hidden;width: 99%;margin: 0 auto;color: #3C3;font-size: 29pt;height_:10%">
+				<div class="">
+					<div class="js_btn_label_stl_smpl" style="color: #3C3;font-size: 23pt;padding: 10px 0px;overflow:hidden">
+						<div class="div_left" style="padding: 0px 20px;color:#393">г.Краснодар 242-03-26</div>
+						<div class="div_right" style="width: 40%;text-align: center;">8 (800) 555-38-50</div>
+					</div>
+				</div>
+			</div>
+	<!--div style="width: 80%;height: 100%;margin: 0 auto;position: absolute;right: 10%;"-->
+	<div style="width: 99%;height: 90%;margin: 0 auto;right: 10%;">
+		<div 	class="div_left" 
+				style="width:60%;
+	height:100%;
+	overflow-y:scroll;
+	overflow-x:hidden;
+	overflow:visible;
+	 -moz-box-shadow_: 0 0 10px rgba(0,0,0,0.5); /* Для Firefox */
+    -webkit-box-shadow_: 0 0 10px rgba(0,0,0,0.5); /* Для Safari и Chrome */
+    box-shadow_: 0 0 10px rgba(0,0,0,0.5); /* Параметры тени */
+    margin: 0 auto;">
+		<div 	class="toolbar_div"
+				style="overflow: hidden;box-shadow:0 0 10px rgba(0,0,0,0.5),0 0 10px rgba(255,255,255,0.5);border-radius: 5px;background: #999;width: 95%;margin: 0 auto;">
+			[[f:res_struct_req^req_res_name:res/struct_get_query_arr/tab_josi_form_kvl&place_from:tab_josi_form_kvl&place_to:struct_get_query_arr.tab_josi_form_kvl&replace:false]]
+					
+			[[f:josi_store_trans^place_to:struct_get_arr.tab_josi_form_kvl&get_dot_key:struct_get_query_arr.tab_josi_form_kvl&replace:false]]
+			
+			[[f:struct_res_query^query:group=aquaon_main_menu&context:struct_get_arr.tab_josi_form_kvl&place_to:popup_cmd_list.current_cmd_list]]
+			
+			[[f:tpl_struct_arr^tpl_path:res/tpl/toolbar/toolbar_item.tpl&node_class_query:&replace:true&rooted:true&append:false&parse_arr:true&struct_res_key:popup_cmd_list.current_cmd_list]]
+		</div>
+			<div class="hidden" style="overflow: hidden;box-shadow:0 0 10px rgba(0,0,0,0.5),0 0 10px rgba(255,255,255,0.5);border-radius: 5px;background: #999;width: 95%;margin: 0 auto;">
+				<div class="div_left aquaon_menu_item" style="width:25%">
+					<div class="" style="border-radius: 5px;background: #f60;">
+						<div class="js_btn_label_stl_smpl">
+							<div>
+								Вода
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="div_left aquaon_menu_item" style="width:25%">
+					<div class="">
+						<div class="js_btn_label_stl_smpl">
+							Оборудование
+						</div>
+					</div>
+				</div>
+				<div class="div_left aquaon_menu_item" style="width:25%">
+					<div class="">
+						<div class="js_btn_label_stl_smpl">
+							Инфо
+						</div>
+					</div>
+				</div>
+				<div class="div_left aquaon_menu_item" style="width:25%">
+					<div class="">
+						<div class="js_btn_label_stl_smpl">
+							Контакты
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="content js_content" style="height: 90%;width: 95%;overflow: hidden;margin: 0 auto;">
+				{{f:tpl^page_path:res/tpl/aquaon/product_list/list.tpl&res_name:tab_item}}
+			</div>
+			<div></div>
+		</div>
+		
+		<div 	class="div_left order_form" 
+				style="width:40%;
+	height:95%;
+	overflow-y:scroll;
+	overflow-x:hidden;
+	overflow:visible;
+	 -moz-box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Для Firefox */
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Для Safari и Chrome */
+    box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Параметры тени */
+    margin: 0 auto;border-radius: 10px;">
+			{{f:tpl^page_path:res/tpl/aquaon/order_form.tpl}}
+		</div>
+		
+	</div>
+	
+</div>	
+
+<div class="foot">
+
+</div>	
+	
+	

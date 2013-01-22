@@ -1,0 +1,85 @@
+/*
+ * fill_zamer_struct_from_form.scl
+ * 
+ * Copyright 2012 Жлобенцев Владимир <dnclive@gmail.com>
+ * 
+ * Заполнение структуры запроса данными из формы
+ * 
+ */
+
+/* id */
+f:struct_rel^place_from:form.[[f:kvl_1_mix_val^mix_key:service_name]].id&place_to:[[f:kvl_1_mix_val^mix_key:place_to_context_key]].id&replace:true>
+
+/* подразделение */
+f:struct_rel^place_from:form.[[f:kvl_1_mix_val^mix_key:service_name]].org_unit&place_to:[[f:kvl_1_mix_val^mix_key:place_to_context_key]].tab_org_unit.0.name&replace:true>
+
+/* офис продаж */
+f:struct_rel^place_from:form.[[f:kvl_1_mix_val^mix_key:service_name]].sale_office&place_to:[[f:kvl_1_mix_val^mix_key:place_to_context_key]].tab_sale_office.0.name&replace:true>
+
+/* дата поступления замера */
+f:struct_rel^place_from:form.[[f:kvl_1_mix_val^mix_key:service_name]].dt_make&place_to:[[f:kvl_1_mix_val^mix_key:place_to_context_key]].dt_make&replace:true>
+
+/* дата выполнения замера */
+f:struct_rel^place_from:form.[[f:kvl_1_mix_val^mix_key:service_name]].dt_zamer&place_to:[[f:kvl_1_mix_val^mix_key:place_to_context_key]].dt_zamer&replace:true>
+
+/* период выполнения замера */
+f:struct_rel^place_from:form.[[f:kvl_1_mix_val^mix_key:service_name]].time_period_zamer&place_to:[[f:kvl_1_mix_val^mix_key:place_to_context_key]].time_period_zamer&replace:true>
+
+/* дата поступления результата замера */
+f:struct_rel^place_from:form.[[f:kvl_1_mix_val^mix_key:service_name]].dt_result&place_to:[[f:kvl_1_mix_val^mix_key:place_to_context_key]].dt_result&replace:true>
+
+/*** заполнение адреса ***/
+/* город 
+f:struct_rel^place_from:form.[[f:kvl_1_mix_val^mix_key:service_name]].city&place_to:[[f:kvl_1_mix_val^mix_key:place_to_context_key]].tab_address.0.tab_city.0.name&replace:true>*/
+
+/* адрес */
+f:struct_rel^place_from:form.[[f:kvl_1_mix_val^mix_key:service_name]].address&place_to:[[f:kvl_1_mix_val^mix_key:place_to_context_key]].tab_address.0.name&replace:true>
+
+/* район города 
+f:struct_rel^place_from:form.[[f:kvl_1_mix_val^mix_key:service_name]].city_area&place_to:[[f:kvl_1_mix_val^mix_key:place_to_context_key]].tab_address.0.tab_area.0.name&replace:true>*/
+
+/*
+f:struct_rel^place_from:form.[[f:kvl_1_mix_val^mix_key:service_name]].street_name&place_to:[[f:kvl_1_mix_val^mix_key:place_to_context_key]].tab_address.0.tab_street.0.name&replace:true>
+*/
+
+/*** клиент ***/
+/* название клиента  имя, телефон, email*/
+f:struct_rel^place_from:[[f:kvl_1_mix_val^mix_key:place_from_context_key]].customer_name&place_to:[[f:kvl_1_mix_val^mix_key:place_to_context_key]].tab_customer.0.name&replace:true>
+
+/* ФИО клиента*/
+f:struct_rel^place_from:[[f:kvl_1_mix_val^mix_key:place_from_context_key]].customer_fio&place_to:[[f:kvl_1_mix_val^mix_key:place_to_context_key]].tab_customer.0.fio&replace:true>
+
+/* телефон */
+f:struct_rel^place_from:form.[[f:kvl_1_mix_val^mix_key:place_from_context_key]].customer_phone&place_to:[[f:kvl_1_mix_val^mix_key:context_res_key]].[[f:kvl_1_mix_val^mix_key:service_name]].[[f:kvl_1_mix_val^mix_key:service_res_name]].tab_customer.0.phone&replace:true>
+
+/* email*/
+f:struct_rel^place_from:[[f:kvl_1_mix_val^mix_key:place_from_context_key]].customer_email&place_to:[[f:kvl_1_mix_val^mix_key:place_to_context_key]].tab_customer.0.email&replace:true>
+
+/*** задейвствованный персонал ***/
+/* менеджер */
+f:struct_rel^place_from:form.[[f:kvl_1_mix_val^mix_key:service_name]].manager_name&place_to:[[f:kvl_1_mix_val^mix_key:place_to_context_key]].tab_concerned_people.0.tab_people.0.name&replace:true>
+
+/* технолог */
+f:struct_rel^place_from:form.[[f:kvl_1_mix_val^mix_key:service_name]].tech_name&place_to:[[f:kvl_1_mix_val^mix_key:place_to_context_key]].tab_concerned_people.1.tab_people.0.name&replace:true>
+
+/* комментарий */
+f:struct_rel^place_from:form.[[f:kvl_1_mix_val^mix_key:service_name]].comment&place_to:[[f:kvl_1_mix_val^mix_key:place_to_context_key]].comment&replace:true>
+
+/* статус  */
+f:struct_rel^place_from:form.[[f:kvl_1_mix_val^mix_key:service_name]].status_name&place_to:[[f:kvl_1_mix_val^mix_key:place_to_context_key]].tab_status.0.name&replace:true>
+
+/*** состав заказа ***/
+f:struct_rel^place_from:form.[[f:kvl_1_mix_val^mix_key:service_name]].count_ok&place_to:[[f:kvl_1_mix_val^mix_key:place_to_context_key]].count_ok&replace:true>
+
+f:struct_rel^place_from:form.[[f:kvl_1_mix_val^mix_key:service_name]].count_bdv&place_to:[[f:kvl_1_mix_val^mix_key:place_to_context_key]].count_bdv&replace:true>
+
+f:struct_rel^place_from:form.[[f:kvl_1_mix_val^mix_key:service_name]].count_dv&place_to:[[f:kvl_1_mix_val^mix_key:place_to_context_key]].count_dv&replace:true>
+
+f:struct_rel^place_from:form.[[f:kvl_1_mix_val^mix_key:service_name]].count_bal&place_to:[[f:kvl_1_mix_val^mix_key:place_to_context_key]].count_bal&replace:true>
+
+f:struct_rel^place_from:form.[[f:kvl_1_mix_val^mix_key:service_name]].count_lodj&place_to:[[f:kvl_1_mix_val^mix_key:place_to_context_key]].count_lodj&replace:true>
+
+f:struct_rel^place_from:form.[[f:kvl_1_mix_val^mix_key:service_name]].count_dop&place_to:[[f:kvl_1_mix_val^mix_key:place_to_context_key]].count_dop&replace:true>
+
+f:struct_rel^place_from:form.[[f:kvl_1_mix_val^mix_key:service_name]].count_other&place_to:[[f:kvl_1_mix_val^mix_key:place_to_context_key]].count_other&replace:true>
+

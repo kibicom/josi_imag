@@ -1,0 +1,18 @@
+/*
+ * loader.scl
+ * 
+ * Copyright 2012 Жлобенцев Владимир <dnclive@gmail.com>
+ * 
+ * Пследовательность команд загрузки сервиса Замеры
+ * 
+ */
+
+
+<!-- Загружаем шаблон формы сервиса -->
+f:tpl^tpl_res_key:&tpl_path:tpl/[[f:kvl_1_mix_val^mix_key:service_name]]/form.tpl&node_class_query:.content_div&parse_arr:false&replace:true&rooted:false&append:false&service_name:[[f:kvl_1_mix_val^mix_key:service_name]]&service_res_name:[[f:kvl_1_mix_val^mix_key:service_res_name]]&context_service_name:[[f:kvl_1_mix_val^mix_key:context_service_name]]&context_service_res_name:[[f:kvl_1_mix_val^mix_key:context_service_res_name]]&relat_id_key:.0.[[f:kvl_1_mix_val^mix_key:context_service_res_name]].0.id&relat_id_val:[[f:kvl_1_mix_val^mix_key:relat_id_val]]&item_list_node_class_query:[[f:kvl_1_mix_val^mix_key:item_list_node_class_query]]>
+
+<!-- Парсим колендари -->
+f:build_jquery_datepicker^class_query:.jquery_datepicker>
+
+<!--Запуск периодического обновления количества оставшихся замеров-->
+freq:5000&lim:0^f:tpl^tpl_res_key:&tpl_path:tpl/zamer/zamer_count.tpl&node_class_query:.zamer_count&rooted:false&replace:true&append:false&parse_arr:false>

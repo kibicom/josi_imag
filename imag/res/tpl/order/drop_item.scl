@@ -1,0 +1,24 @@
+/*
+ * drop_item.scl
+ * 
+ * Copyright 2012 Жлобенцев Владимир <dnclive@gmail.com>
+ * 
+ * Пследовательность команд удаления выбранного элемента
+ * 
+ */
+
+
+<!--Загрузка запроса удаления элемента-->
+f:res_struct_req^req_res_name:res/struct_put_query_arr/[[f:kvl_1_mix_val^mix_key:service_name]]/[[f:kvl_1_mix_val^mix_key:service_res_name]]_drop&place_to:struct_put_arr.[[f:kvl_1_mix_val^mix_key:service_name]].drop.[[f:kvl_1_mix_val^mix_key:service_res_name]]&place_from:[[f:kvl_1_mix_val^mix_key:service_res_name]]_drop&replace:true>
+
+<!--берем id выбранного элемента-->
+f:struct_val_set^val:[[f:kvl_1_mix_val^mix_key:res_item_id]]&struct_res_key:struct_put_arr.[[f:kvl_1_mix_val^mix_key:service_name]].drop.[[f:kvl_1_mix_val^mix_key:service_res_name]].0.id>
+
+<!--выполняем запрос удаления элемента-->
+f:josi_store_trans^metod:POST&put_dot_key:struct_put_arr.[[f:kvl_1_mix_val^mix_key:service_name]].drop.[[f:kvl_1_mix_val^mix_key:service_res_name]]>
+
+<!--очищаем отплавленную структуру замера перезаписывая ее оригинальной из кеша-->
+f:res_struct_req^req_res_name:res/struct_put_query_arr/[[f:kvl_1_mix_val^mix_key:service_name]]/[[f:kvl_1_mix_val^mix_key:service_res_name]]_drop&place_to:struct_put_arr.[[f:kvl_1_mix_val^mix_key:service_name]].[[f:kvl_1_mix_val^mix_key:service_res_name]]&place_from:[[f:kvl_1_mix_val^mix_key:service_res_name]]_drop&replace:true>
+
+<!-- помечаем выбранный элемент удаленным -->
+f:josi_form_mark_deleted^list_node_class_query:.josi_store_item_arr_div>

@@ -1,0 +1,22 @@
+/*
+ * save_item.scl
+ * 
+ * Copyright 2012 Жлобенцев Владимир <dnclive@gmail.com>
+ * 
+ * Пследовательность команд сохранения нового или редактируемого замера
+ * 
+ */
+
+<!--загрузка структуры запроса удаления текущих связанных людей-->
+ev:{click}&if_exp: '#form.zamer.id#'!='' &calc_key_limiter:true^f:res_struct_req^req_res_name:res/struct_put_query_arr/{{f:show_val^val&key:val&def_val:zamer}}/tab_zamer_relat_drop&place_to:struct_put_arr.zamer.tab_zamer_relat_drop.tab_zamer&place_from:tab_zamer_relat_drop&replace:true>
+
+<!--копируем в загруженную структуру запроса id текущего выбранного замера-->
+ev:{click}&if_exp: '#form.zamer.id#'!='' &calc_key_limiter:true^f:struct_rel^place_from:form.zamer.id&place_to:struct_put_arr.zamer.tab_zamer_relat_drop.tab_zamer.0.id&replace:true>
+
+<!--копируем в загруженную структуру запроса структуру задействованных сотрудников
+временное решение - необходиом для корректного редактирования заказа, сохранения людей-->
+ev:{click}&if_exp: '#form.zamer.id#'!='' &calc_key_limiter:true^f:struct_rel^place_from:selected.zamer.tab_zamer.0.tab_concerned_people&place_to:struct_put_arr.zamer.tab_zamer_relat_drop.tab_zamer.0.tab_concerned_people&replace:true>
+
+<!--отправляем запрос на сервер - удалеяем текущих связанных людей-->
+ev:{click}&if_exp: '#form.zamer.id#'!='' &calc_key_limiter:true^f:josi_store_trans^metod:POST&put_dot_key:struct_put_arr.zamer.tab_zamer_relat_drop.tab_zamer>
+

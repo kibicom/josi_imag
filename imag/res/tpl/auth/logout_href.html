@@ -1,0 +1,38 @@
+<!--
+		logout_href.html
+        
+        Copyright 2011 dnclive <dnclive@gmail.com>
+        
+
+-->
+
+
+<div 	
+			data-josi-ev-resp="click" 
+			data-josi-ev-stop=true 
+			data-josi-kvl-str="f:form_popup_list_show">
+		<div class="div_right service_top_item" style="">
+			
+			<div >
+				<div class="service_top_item_label">{{f:login_name}}</div>
+			</div>
+			<div 	class="popup_list_div v_scroll hidden"
+				style="float: right;right: 0px;width: 100px;overflow_: hidden;left_: auto;height: 50px;">
+				<div 	class="form_popup_list_item_div"
+						style="color: 
+#333;
+overflow: hidden;
+float: left;">
+					<a href="{{f:resource_root}}/webproj/auth/index.php?
+				kvl.0.f=logout&kvl.1.redirect_uri='{{f:resource_root}}/webproj/venta_service_beta/index.php?kvl.0.f=tpl&kvl.1.page_path=service&kvl.1.service={{f:show_val^service_name&key:service_name}}.tpl'" class="service_top_a" style="color:#333">
+						<div class="form_popup_item_div div_left josi_val_bold form_popup_item_val">Выйти</div>
+					</a>
+
+				</div>
+			</div>
+			
+		</div>
+		
+		
+	</div>
+

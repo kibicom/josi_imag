@@ -1,0 +1,25 @@
+/*
+ * repeate_zamer.scl
+ * 
+ * Copyright 2012 Жлобенцев Владимир <dnclive@gmail.com>
+ * 
+ * Пследовательность команд редактирования элементов
+ * 
+ */
+
+
+
+<!--Удаляем текущие значения в форме-->
+f:struct_drop^struct_res_key:form.[[f:kvl_1_mix_val^mix_key:service_name]].[[f:kvl_1_mix_val^mix_key:service_res_name]]>
+
+<!--Загружаем список команд копирования значений из структуры в форму-->
+[[f:tpl^tpl_res_key:&tpl_path:tpl/[[f:kvl_1_mix_val^mix_key:service_name]]/fill_form_from_struct.scl&drop_comment:true&context_struct_key:selected&parse_arr:false&node_class_query:]]
+
+<!--Заполняем форму значениями из структуры-->
+f:fill_form_from_struct_res^struct_res_key:form.[[f:kvl_1_mix_val^mix_key:service_name]]&class_query:.josi_store_get_div>
+
+<!--Удаляем id редактируемой записи тогда при сохранении будет создан новый замер-->
+f:struct_val_set^val:&struct_res_key:[[f:kvl_1_mix_val^mix_key:context_res_key]].id&context_key:[[f:kvl_1_mix_val^mix_key:context_key]]>
+
+<!--Ставим признак на создаваемом замере is_repeat_zamer - это повторный замер-->
+f:struct_val_set^val:Повторный&struct_res_key:[[f:kvl_1_mix_val^mix_key:context_res_key]].is_repeat_zamer&context_key:[[f:kvl_1_mix_val^mix_key:context_key]]>

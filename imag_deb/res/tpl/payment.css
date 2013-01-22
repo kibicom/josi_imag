@@ -1,0 +1,196 @@
+/*
+	payment.html
+        
+    Copyright 2012 Жлобенцев Владимир <dnclive@gmail.com>
+	
+*/
+
+.payment_main_div
+{
+	width:100%;
+	height:100%;
+}
+
+.payment_part_div
+{
+	#width:100%;
+	height:15%;
+}
+
+.payment_main_div
+{
+	width:100%;
+	height:100%;
+}
+
+.josi_store_div
+{
+	width:100%;
+	height:80%;
+}
+
+.payment_main_div
+{
+	width:100%;
+	height:100%;
+}
+
+/*** кнопки ***/
+
+.btn_div
+{
+	margin:10px;
+	#height: 35px;
+	#width: 100%;
+	border-radius: 10px;
+}
+
+.btn_div_left
+{
+	margin:10px;
+	height: 35px;
+	#width: 100%;
+	border-radius: 20px 3px 3px 20px;
+	#border-bottom-left-radius: 30px 15px;
+	#border-bottom-right-radius: 3px;
+	#border-top-left-radius: 30px 15px;
+	#border-top-right-radius: 3px;
+}
+
+.btn_close_div
+{
+	border-radius: 40px;
+	padding: 0px 5px;
+	color: white;
+	text-align: center;
+	height: 35px;
+	font-size: 21pt;
+}
+
+.green_btn_div
+{
+	background: #0c0;
+}
+
+.sea_btn_div
+{
+	background: #0cf;
+}
+
+.sea_btn_div
+{
+	background: #39c;
+}
+
+.gray_btn_div
+{
+	background:#ccc;
+}
+
+.brown_btn_div
+{
+	background: #c93;
+}
+
+.red_btn_div
+{
+	#background: #f99;
+	#background: #f66;
+	background: #f33;
+}
+
+.btn_div:hover
+{
+	cursor:pointer;
+}
+
+.btn_label
+{
+	padding: 10px;
+	color: white;
+	text-align: center;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+/*** кнопки переключения между разделами ***/
+
+.payment_part_item_div
+{
+	margin:10px;
+	height: 35px;
+	#width: 100%;
+	#background: #0c0;
+	background:#9f6;
+	border-radius: 10px;
+}
+
+.payment_part_item_div:hover
+{
+	cursor:pointer;
+}
+
+.payment_part_item_label
+{
+	padding: 8px;
+	color: white;
+	font-weight:bold;
+	text-align: center;
+}
+
+.payment_part_item
+{
+	background:#f60;
+}
+
+.payment_part_item_active
+{
+	background:#0c0;
+	border: #0C0 solid 10px;
+}
+
+/*** поля ввода платежа ***/
+
+.payment_input_item_div
+{
+	#width:150;
+	#padding:6px 18px;
+	#padding: 3px 11px;
+	width:20%;
+}
+
+.payment_input_item_val
+{
+	padding:6px 3px;
+}
+
+.payment_list_item_val
+{
+	padding:6px 6px;
+	overflow:hidden;
+	#overflow-y:auto;
+}
+
+.payment_list_item_val_div
+{
+	
+	width:20%;
+}
+
+.col_5
+{
+	
+	width:20%;
+}
+
+.col_6
+{
+	
+	width:16%;
+}
+
+.payment_input_label
+{
+	text-align: center;
+	color: #665;
+}

@@ -1,0 +1,465 @@
+<!--
+        Aquaon
+        
+        Copyright 2012 Жлобенцев Владимир <dnclive@gmail.com>
+        
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//RU"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ru" lang="ru">
+
+<head>
+	<title>Кокетка. Эротическое белье.</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<meta name="generator" content="Geany 0.20" />
+	
+	<link rel="stylesheet" type="text/css" href="res/tpl/main.css">
+	<link rel="stylesheet" type="text/css" href="res/tpl/josi.css">
+	<link rel="stylesheet" type="text/css" href="res/tpl/waiter/waiter.css">
+	<link rel="stylesheet" type="text/css" href="res/tpl/aquaon/css.css">
+	
+	<!--link rel="stylesheet" type="text/css" href="../release/dijit/themes/claro/claro.css"-->
+	<link rel="stylesheet" type="text/css" href="../jquery/css/ui-lightness/jquery-ui-1.8.18.custom.css">
+	
+	<!--google analistics-->	
+	{{f:tpl^page_path:res/tpl/aquaon/google_analistics_code.tpl}}
+	
+	<!--yandex metric-->	
+	{{f:tpl^page_path:res/tpl/aquaon/yandex_metric_code_.tpl}}
+	
+	<script>
+		var dojoConfig = 
+		{
+			async:true,
+			isDebug:true,
+			//cacheBust:new Date(),
+			//cacheBust:new Date("10.10.10"),
+			cacheBust:false,
+			parseOnLoad: true,
+			locale:'ru',
+			waitSeconds:5,
+			paths:
+			{
+				"tlib":"../tlib",
+				"res":"../../imag/res",
+				//"res":"../../aquaon/res",
+			},
+		};
+	</script>
+	
+	<!--script src="config.js"></script-->
+	
+	<!--продуктивные скрипты-->
+	<script src="../release/dojo/dojo.js"></script>
+	
+	<!--отладочные скрипты-->
+	<!--script src="../dojo-release-1.7.2-src/dojo/dojo.js"></script-->
+	
+	<script src="../jquery/jquery-1.7.2.min.js"></script>
+	<script src="../jquery/js/jquery-ui-1.8.20.custom.min.js"></script>
+	
+	<script src="../jquery/development-bundle/ui/i18n/jquery.ui.datepicker-ru.js"></script>
+	
+	<script>
+	
+		
+		var unjax=null;
+		var josi_store=null;
+		var store=null;
+		var struct_res_arr=null;		//структурные ресурсы
+		var task_arr=null;
+		
+		var dojo_console=console;
+		
+		var console=
+		{
+			//deb_group:"josi_store",
+			//deb_group:"ttask",
+			//deb_group:"josi_form",
+			//deb_group:"inject_if_empty",
+			//deb_group:"popup",
+			deb_group:"trans",
+			//deb_group:"sti_report",
+			//deb_group:"struct_req",
+			//deb_group:"select_item",
+			//deb_group:"popup",
+			//deb_group:"tpl_struct_arr",
+			//deb_group:"require",
+			//deb_group:"map_reduce",
+			//deb_group:"tcalc",
+			//deb_group:"tcalc_2",
+			//deb_group:"f_struct_val",
+			//deb_group:"task_kvl",
+			//deb_group:"tpl_kvl_1_mix",
+			//deb_group:"target_node",
+			//deb_group:"fill_item_by_form_val_arr",
+			//deb_group:"fill_form_from_struct_res",
+			//deb_group:"josi_store_trans",
+			//deb_group:"sti_report",
+			//deb_group:"jq_datepicker",
+			//deb_group:"jq_datepicker",
+			//deb_group:"ev",
+			//deb_group:"ev_keydown",
+			//deb_group:"filter_node_list",
+			//deb_group:"task",
+			deb_group:"trans",
+			//deb_group:"tpl_3",
+			//deb_group:"tpl_4",
+			//deb_group:"tpl_5",
+			//deb_group:"task_2",
+			//deb_group:"click_ev",
+			//deb_group:"tev",
+			//deb_group:"new_unjax",
+			//deb_group:"new_unjax_2",
+			//deb_group:"popup.show",
+			//deb_group:"thash",
+			//deb_group:"t_uti_f_mail_send",
+			//deb_group:"tpl_get",
+			deb_group:"gaq",
+			//deb_group:"tev_loader",
+			//deb_group:"tpl_done_content",
+			
+			
+			log:function()
+			{
+				//dojo_console.log(this, arguments);
+				var self=this;
+				
+				if (arguments[0]!=self.deb_group&&self.deb_group!="")
+				{
+					return;
+				}
+				
+				dojo_console.log(arguments);
+				return;
+				var i=1;
+				while(i<arguments.length)
+				//for(var i=0;i<arguments.length;i++) 
+				{
+					var arg=arguments[i];
+					
+					
+					
+					i++;
+					//alert("arguments["+i+"] = "+arguments[i]);
+				}
+				
+				return;
+			}
+		}
+		
+		require(
+		//["tlib/tlib"],
+		[],
+		function(t_lib)
+		{
+			require(
+			[	
+				"dojo",
+				//"dojo/_base/fx",
+				//"dijit/dijit",
+				//"dojo/i18n!dijit/form/nls/validate",
+				//"dijit/Calendar",
+				//"dijit/form/TimeTextBox",
+				//"dijit/TimeTextBox",
+				"tlib/tuti", 
+				"tlib/tkvl",
+				"tlib/tstore",
+				//"tlib/imag",
+				"tlib/tunjax",
+				"tlib/tpl",
+				//"tlib/josi_store",
+				//"tlib/tjosi_store_emiter",
+				//"tlib/thash",
+				"tlib/ttask",
+				//"tlib/tjosi_form",
+				"tlib/tres",
+			],
+			function(
+				dojo,
+				//t_fx,
+				//t_dijit,
+				//i18n,
+				//t_calendar,
+				//t_form_timebox,
+				//t_timebox,
+				t_uti, 
+				t_kvl, 
+				t_store, 
+				//t_imag, 
+				t_unjax, 
+				t_tpl, 
+				//t_josi_store,
+				//t_josi_store_emiter, 
+				//t_thash,
+				t_task,
+				//t_josi_form,
+				t_res)
+			{
+				
+				var source="https://localhost/webproj/lurelle.ru/index.php";
+				var source="index.php";
+				
+				//инициализация ресурсов
+				struct_res_arr=t_res.f_new_struct_res_arr();
+				
+				t_res.f_set_def_struct_res_arr({struct_res_arr:struct_res_arr});
+				
+				t_res.f_set_josi_store_url({josi_store_url:"index.php"});
+				
+				
+				//источник данных
+				//store=new t_store({source:source});
+				t_res.f_struct_res_arr_set({key:"store",val:store});
+				
+				//указываем параметры хранилища данных
+				t_res.f_struct_res_arr_set(
+				{
+					key:"store",
+					val:
+					{
+						url:source,
+						source:source,
+					}
+				});
+				
+				var _gaq=_gaq||[];
+				
+				//запоминаем google analistycs объект
+				t_res.f_struct_res_arr_set(
+				{
+					key:"google",
+					val:
+					{
+						_gaq:_gaq,
+					}
+				});
+				
+				//запоминаем имя таблицы хранящей клиентский kvl
+				t_res.f_struct_res_arr_set(
+				{
+					key:"kvl_db_name",
+					//val:"db_josi_9",
+					val:"kibicom_db-josi-9",
+				});
+				
+				/*
+				console.log("gaq", _gaq);
+				
+				_gaq.push(['_initData']);
+				
+				_gaq.push(['_trackEvent','open', 'main']);
+				
+				console.log("gaq", "struct_res", t_res.f_struct_res_arr_get({key:"google._gaq"}));
+				
+				console.log("gaq", _gaq);
+				*/
+				
+				t_tpl.constructor({store:store});
+				
+				t_unjax.f_cre(
+				{
+					context:"unjax",
+					//store:store,
+					//emiter:t_josi_store_emiter,
+					kvl:t_kvl,
+					tick_time:100,
+					start_when_ready:true,
+					//task_arr:t_task.fcre_task_arr(),
+				});
+				
+				console.log("new_unjax_2", struct_res_arr);
+				
+				console.log(t_unjax.f_task_arr({context:"unjax"}));
+				
+				
+				t_task.f_put(
+				{
+					task_arr:t_unjax.f_task_arr({context:"unjax"}),
+					new_task:
+					{
+						//kvl_str:"f:josi_store_get",
+						kvl_str:"f:build_page^root_node_class_name:body",
+						is_active:true,
+						emit_once:true,
+						del_after_emit:true,
+						in_hash:true,
+					},
+					modify:false,
+					add:true,
+				});
+				
+				
+			});
+		});
+	
+	</script>
+	
+
+
+</head>
+
+<body 	class="body claro body_stl_smpl" 
+		data-josi-kvl-str="
+		f:waiter_show>
+		
+		f:fill_from_hash>
+		
+		f:ev_inject^root_node_class_name:body>
+		
+		f:tpl_struct_arr^tpl_path:{{f:show_val^service&key:service}}&node_class_query:.service_div&struct_res_key:&parse_arr:false&replace:true&rooted:false&append:false&parse_arr:false&ev_inject:true>
+		
+		f:item_list_alt^item_class_query:.josi_list_item&alt_class:josi_list_item_1_alt_stl_smpl>
+		
+		f:build_jquery_datepicker^class_query:.jquery_datepicker>
+		
+		f:waiter_hide"
+		data-josi-ev-resp="load">
+	
+	<textarea class="trans_resp hidden">
+	
+	</textarea>
+	
+	<div class="service_div content" style="height:100%">
+	<div style="height: 40%;width: 70%;position: absolute;top: 30%;left: 15%;">
+			<div style="float: left;width: 60%;margin-top: -2%;">
+				
+				<DIV style="font-family: averia;font-size: 500%;text-align: center;color: #39F;text-shadow: 0px 0px 3px blue;">КОКЕТКА</DIV>
+				<div style="font-size: 190%;text-align: center;color: #39F;">МАГАЗИН ЭРОТИЧЕСКОГО БЕЛЬЯ</div>
+			</div>
+			
+			<div style="float: left;width: 40%;">
+				
+				<div style="font-size: 190%;color: #F60;text-align: center;">8 (918) 062-21-33</div>
+				<div class="hidden" style="font-size: 80%;color: #999;text-align: center;">Многоканальный. Бесплатный.</div>
+				<div class="hidden" style="font-size: 170%;color: #09C;text-align: center;">242-03-26</div>
+				<div class="hidden" style="font-size: 80%;color: #999;text-align: center;">г. Краснодар</div>
+				
+			</div>
+			
+			<div style="float: left;width: 100%;margin-top: 5%;">
+				<div style="font-size: 150%;text-align: center;">Интернет-магазин Какетка. Предоставляет широкий выбор женского эротического белья, корсетов, сексуальной одежды.</div>
+				<div style="font-size: 130%;color: #555;text-align: center;">Доставка по всей России. </div>
+			</div>
+		</div>
+	</div>
+	<div class="hidden">
+				<input 	class="josi_form_input_div_stl_smpl" type="text" name="date1" id="time1" value="T15:00:00"
+					data-dojo-type_="dijit.form.TimeTextBox"
+					onChange="dojo.byId('val').value=arguments[0].toString().replace(/.*1970\s(\S+).*/,'T$1')"
+					required="true" />
+			</div>
+	<div 	class="popup_cmd_div_ hidden popup_cmd_div_stl_smpl" 
+			data-josi-ev-resp="click" 
+			data-josi-kvl-str="f:popup_list_hide^popup_class_name:.popup_cmd_div">
+		<div class="popup_pointer_div popup_pointer_div_stl_smpl">
+		</div>
+		<div 	class="popup_cmd_list_div popup_cmd_list_div_stl_smpl"
+				style="width: 100px;height: 100px;">
+		</div>
+	</div>
+	
+	<div 	class="popup_cmd_div jp_right_stl_smpl hidden" 
+			data-josi-ev-resp="click" 
+			data-josi-kvl-str="f:popup_list_hide^popup_class_name:.popup_cmd_div">
+		<div class="popup_pointer_div jp_right_top_pointer_stl_smpl hidden">
+		</div>
+		<div 	class="popup_cmd_list_div jp_right_top_frame_stl_smpl"></div>
+	</div>
+	
+	<div class="waiter_div hidden">
+		<div style="overflow: hidden;
+					margin: 0 auto;
+					width: 140px;
+					text-align: center;">
+			<div style="float:left">Загрузка</div>
+			<img src="res/tpl/waiter/26.gif" style="float: left;
+												height: 30px;
+												padding: 0px 0px 0px 5px;"/>
+		</div>
+	</div>
+	
+	<div class="popup_div hidden">
+		<div class="popup_main_div popup_main_div_stl_smpl" style="display:block">
+			<div class="hidden popup_caption_div popup_caption_div_stl_smpl">
+				<div class="div_left hidden">
+					<div class="sea_btn_div btn_div btn_div_left">
+						<div class="btn_label ">
+							Назад
+						</div>
+					</div>
+				</div>
+				<div class="hidden div_right">
+					<div 	class="js_red_btn_div_stl_smpl btn_div js_btn_close_div_stl_smpl popup_close_btn js_btn_div_stl_smpl"
+							data-josi-ev-resp="click"
+							data-josi-kvl-str="f:popup.close">
+						<div>
+							&nbspX&nbsp
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="popup_content popup_content_stl_smpl" style="width:100%;height:100%">
+				{{f:tpl^page_path:res/tpl/aquaon/city_selector.tpl}}
+			</div>
+		</div>
+		<div class="popup_shadow_back popup_shadow_back_stl_smpl"  style="display:block"></div>
+	</div>
+	<div style="
+				display:none;
+				-display: block;
+				//display: block;
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				z-index: 100000;
+				top: 0;
+				left: 0;
+				background: white;">
+		<div style="width: 100%;
+				height: 30%;
+				position: absolute;
+				z-index: 100000;
+				top: 35%;
+				left: 0%;
+				font-size: 160%;">
+			<div style="text-align: center;font-weight: bold;color: #333;">
+				К сожалению Ваша версия браузера не поддерживается нашим сайтом!
+			</div>
+			<div style="text-align: center;font-size: 80%;color: #333;">
+				Вы можете воспользоваться одним из приведенных ниже
+			</div>
+			<div style="text-align: center;">
+				<div style="height: 20%;overflow: hidden;width: 60%;margin: 0 auto;">
+					<div style="overflow: hidden;width: 25%;float: left;text-align: center;">
+						<a href="http://www.google.com/chrome" target="blank" style="height: 100px; border-color: white;">
+							<img 	style="height: 100%;border-color: white;"
+									src="../../josi/image.php?width=100px&height=100px&image=browser/chrome.png"/>
+						</a>
+					</div>
+					<div style="overflow: hidden;width: 25%;float: left;text-align: center;">
+						<a href="http://download.mozilla.org/?product=firefox-14.0.1&os=win&lang=ru" target="blank" style="height: 100px; border-color: white;">
+							<img 	style="height: 100%;border-color: white;"
+									src="../../josi/image.php?width=100px&height=100px&image=browser/firefox.png"/>
+						</a>
+					</div>
+					<div style="overflow: hidden;width: 25%;float: left;text-align: center;">
+						<a href="http://www.opera.com/" target="blank" style="height: 100px; border-color: white;">
+							<img 	style="height: 100%;border-color: white;"
+									src="../../josi/image.php?width=100px&height=100px&image=browser/opera.png"/>
+						</a>
+					</div>
+					<div style="overflow: hidden;width: 24%;float: left;text-align: center;">
+						<a href="http://windows.microsoft.com/ru-RU/internet-explorer/downloads/ie/" target="blank" style="height: 100px; border-color: white;">
+							<img 	style="height: 100%;border-color: white;"
+									src="../../josi/image.php?width=100px&height=100px&image=browser/ie9.png"/>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+/*
+ * put_item.scl
+ * 
+ * Copyright 2012 Жлобенцев Владимир <dnclive@gmail.com>
+ * 
+ * Пследовательность команд сохранения нового или редактируемого элемента
+ * 
+ */
+
+
+<!--Загрузка запроса сохранения замеров-->
+f:res_struct_req^req_res_name:res/struct_put_query_arr/[[f:kvl_1_mix_val^mix_key:service_name]]/[[f:kvl_1_mix_val^mix_key:service_res_name]]&place_to:struct_put_arr.[[f:kvl_1_mix_val^mix_key:service_name]].[[f:kvl_1_mix_val^mix_key:service_res_name]]&place_from:[[f:kvl_1_mix_val^mix_key:service_res_name]]&replace:true>
+
+<!--заполняем запрос данными формы-->
+[[f:tpl^tpl_path:tpl/[[f:kvl_1_mix_val^mix_key:service_name]]/fill_struct_from_form.scl&place_from_context_key:form.[[f:kvl_1_mix_val^mix_key:service_name]]&place_to_context_key:struct_put_arr.[[f:kvl_1_mix_val^mix_key:service_name]].[[f:kvl_1_mix_val^mix_key:service_res_name]].0&drop_comment:true&node_class_query:]]
+
+<!--выполняем запрос сохранения замера-->
+f:josi_store_trans^metod:POST&put_dot_key:struct_put_arr.[[f:kvl_1_mix_val^mix_key:service_name]].[[f:kvl_1_mix_val^mix_key:service_res_name]]>
+
+<!--очищаем отплавленную структуру замера перезаписывая ее оригинальной из кеша -->
+f:res_struct_req^req_res_name:res/struct_put_query_arr/[[f:kvl_1_mix_val^mix_key:service_name]]/[[f:kvl_1_mix_val^mix_key:service_res_name]]&place_to:struct_put_arr.[[f:kvl_1_mix_val^mix_key:service_name]].[[f:kvl_1_mix_val^mix_key:service_res_name]]&place_from:[[f:kvl_1_mix_val^mix_key:service_res_name]]&replace:true>

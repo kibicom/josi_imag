@@ -1,0 +1,34 @@
+/*
+	toolbar.css
+        
+    Copyright 2012 Жлобенцев Владимир <dnclive@gmail.com>
+	
+*/
+
+.toolbar_div
+{
+	overflow: hidden;
+	background: #CCC;
+}
+
+.toolbar_item_div
+{
+	padding: 0px;
+	height: 40px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.toolbar_item_div:hover
+{
+	display: block;
+	background: #999;
+	border-radius: 5px;
+}
+
+.toolbar_item_img
+{
+	height: 100%;
+	overflow: hidden;
+	margin: 0;
+}

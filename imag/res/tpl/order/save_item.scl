@@ -1,0 +1,23 @@
+/*
+ * save_item.scl
+ * 
+ * Copyright 2012 Жлобенцев Владимир <dnclive@gmail.com>
+ * 
+ * Пследовательность команд сохранения нового или редактируемого замера
+ * 
+ */
+
+
+f:res_struct_req^req_res_name:res/struct_put_query_arr/{{f:show_val^val&key:val&def_val:zamer}}/tab_zamer_relat_drop&place_to:struct_put_arr.zamer.tab_zamer_relat_drop.tab_zamer&place_from:tab_zamer_relat_drop&replace:true>
+
+f:struct_rel^place_from:selected.tab_zamer.0.id&place_to:struct_put_arr.zamer.tab_zamer_relat_drop.tab_zamer.0.id&replace:true>
+
+f:struct_rel^place_from:selected.tab_zamer.0.tab_concerned_people&place_to:struct_put_arr.zamer.tab_zamer_relat_drop.tab_zamer.0.tab_concerned_people&replace:true>
+
+f:josi_store_trans^metod:POST&put_dot_key:struct_put_arr.zamer.tab_zamer_relat_drop.tab_zamer>
+
+f:struct_rel^place_from:selected.tab_zamer.0.id&place_to:struct_put_arr.zamer.tab_org_unit.0.tab_zamer.0.id&replace:true>
+
+f:josi_store_trans^metod:POST&put_dot_key:struct_put_arr.zamer.tab_org_unit>
+
+f:res_struct_req^req_res_name:res/struct_put_query_arr/zamer/tab_org_unit&place_to:struct_put_arr.zamer.tab_org_unit&place_from:tab_org_unit&replace:true>

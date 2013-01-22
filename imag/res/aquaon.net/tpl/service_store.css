@@ -1,0 +1,17 @@
+/*
+        service_store.css
+        
+        Copyright 2011 dnclive <dnclive@gmail.com>
+        
+        Стили сервисов
+        
+*/
+
+/*** левая боковая панель ***/
+
+.service_div
+{
+	height: 100%;
+	width:100%;
+	overflow: hidden;
+}

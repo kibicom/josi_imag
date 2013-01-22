@@ -1,0 +1,401 @@
+/*
+        main.css
+        
+        Copyright 2011 dnclive <dnclive@gmail.com>
+        
+        This program is free software; you can redistribute it and/or modify
+        it under the terms of the GNU General Public License as published by
+        the Free Software Foundation; either version 2 of the License, or
+        (at your option) any later version.
+        
+        This program is distributed in the hope that it will be useful,
+        but WITHOUT ANY WARRANTY; without even the implied warranty of
+        MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+        GNU General Public License for more details.
+        
+        You should have received a copy of the GNU General Public License
+        along with this program; if not, write to the Free Software
+        Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+        MA 02110-1301, USA.
+*/
+
+html
+{
+	height:100%;
+	width:100%
+}
+
+body
+{
+	height:100%;
+	width:100%;
+	margin:0;
+}
+
+.header_div
+{
+	height:30px;
+	width: 1000px;
+	margin: 0 auto;
+	/*background:#cfc;*/
+}
+
+.div_left
+{
+	position: relative; 
+	float: left; 
+	/*padding:0 0 0 90px;*/
+}
+
+.div_right
+{
+	position: relative; 
+	float: right;
+	/*text-align:center;*/
+}
+
+.div_done
+{
+	height:1px;
+	width:30%;
+	font-size:18pt;
+	text-align:center;
+	
+	/*border: #CCF solid 3px;
+	margin: 6px 0px;*/
+	
+}
+
+.div_do
+{
+	height:300px;
+	width:40%;
+	font-size:18pt;
+	text-align:center;
+	
+	border-left: #CCF solid 3px;
+	border-right: #CCF solid 3px;
+	margin: 0 -6px;
+	
+}
+
+.div_todo
+{
+	height:1px;
+	width:30%;
+	font-size:18pt;
+	text-align:center;
+		
+	/*border: #CCF solid 3px;
+	margin: 6px 0px;*/
+}
+
+/*заголовки списков*/
+
+.div_done_header
+{
+	height:50%;
+	width:30%;
+	font-size:18pt;
+	text-align:center;
+	
+	
+}
+
+.div_do_header
+{
+	height:50%;
+	width:40%;
+	font-size:18pt;
+	text-align:center;
+	
+	
+}
+
+.div_todo_header
+{
+	height:50%;
+	width:30%;
+	font-size:18pt;
+	text-align:center;
+		
+}
+
+/*сами списки tab в них непосредственно добавляются строки элементов row*/
+.todo_list, .do_list, .done_list
+{
+	width:100%;
+	height:100%
+	
+}
+
+.task_div
+{
+	height:100%;
+	width:100%;
+	margin:0 auto;
+	/*border:#9CF solid 3px;
+	border:#ccf solid 3px;
+	height:300px;*/
+}
+
+.test_css
+{
+	width:100%;
+}
+
+.div_item
+{
+	width:100%;
+	font-size:14pt;
+	text-align:left;
+}
+
+.div_item_row_focus
+{
+	background:#cfc;
+}
+
+.div_item_row:hover
+{
+	background:#cfc;
+}
+
+.div_item_row:focus
+{
+	background:#fcc;
+}
+
+.div_item_list
+{
+	/*height:200px;
+	overflow:auto;*/
+	/*width:100%;*/
+	/*font-size:14pt;
+	text-align:left;*/
+}
+
+.div_items_tab
+{
+	width:100%;
+	
+}
+
+
+/*стрелки перемещения элементов в группу слева*/
+.div_move_to_left
+{
+	text-align:center;
+	color:#fff;
+}
+
+.div_move_to_left:hover
+{
+	cursor:pointer;
+}
+
+/*стрелки перемещения элементов в группу слева*/
+.div_move_to_right
+{
+	text-align:center;
+	color:#fff;
+}
+
+.div_move_to_right:hover
+{
+	cursor:pointer;
+}
+
+.site_logo_div_l
+{
+	height: 80px; 
+	width: 80px;
+}
+
+.site_logo_div_r
+{
+	height: 80px; 
+	width: 80px;
+	padding:45px 0 0 10px;
+}
+
+.main_div
+{
+	height:80%;
+	margin: 0 auto;
+	/*width: 1000px;*/
+}
+
+.service_div
+{
+	height:33px;
+	width:100%;
+	/*background:#9cf*/
+	background:#ccf;
+	color: #069;
+	/*border:#9CF solid 3px;
+	border:#ccf solid 3px;
+	margin: -3px;*/
+}
+
+.content_div
+{
+	width: 1000px;
+	margin: 0 auto;
+}
+
+p
+{
+	font-family:verdana, arial, sans-serif;
+	font-size:14pt;
+}
+
+.color1:
+{
+	color:#cfc
+}
+
+.color2:
+{
+	color:#fcc
+}
+
+.color2:
+{
+	color:#ccf
+}
+
+.block
+{
+	display:block;
+}
+
+.table
+{
+	display:table;
+	height: 0;
+}
+
+.row
+{
+	display:table-row;
+}
+
+.cell
+{
+	display:table-cell;
+}
+
+/*Классы окна уведомлений*/
+
+/*окно уведомлений выскакивающее вверху экрана оно занимает 30% от размера окна и расположено по центру*/
+.notify_div
+{
+	width: 30%;
+	position: absolute;
+	left: 31%;
+	background: white;
+	top: 0;
+	border: 9px solid #393;
+	background: #;
+	padding: 3%;
+}
+
+.hidden
+{
+	display:none;
+}
+
+/*форма входа*/
+
+.login_form_div
+{
+	width: 80%;
+    margin: 0 auto;
+}
+
+.login_form
+{
+	text-align:center;
+}
+
+/*сервисная строка*/
+.service_top
+{
+	width: 100%; 
+	height: 16px;
+	margin: 0;
+	padding: 0; 
+	border-bottom: 1px solid #9cf;	
+}
+
+.bluetext
+{
+	font:10pt/10pt sans-serif; 	
+	color: #39f;
+}
+
+.service_item_div
+{
+	margin:0 3px;	
+}
+
+.topa:link
+{
+	font:10pt/10pt sans-serif; 
+	text-decoration: none;	
+	color: #39f;
+}
+
+.topa:visited
+{
+	font:10pt/10pt sans-serif; 
+	text-decoration: none;	
+	color: #39f;
+}
+
+/*строка поиска kibi*/
+.kibik_div
+{
+	width: 100%; 
+	height: 49px;
+	margin: 0 ;
+	padding: 0; 
+}
+
+.kibi_logo
+{
+	font-size: 36pt;
+	color: #093;
+	margin: -9px 0;
+}
+
+.kibik_what
+{
+	top: 18px;
+	position: relative;
+}
+
+/*форма регистрации*/
+
+.label
+{
+	color:#999;
+	text-align:center;
+	padding:0 0 0 0;
+}
+.form_value
+{
+	font-size:20px;
+}
+
+.login_button
+{
+	background: green;
+	color: white;
+	padding: 10px;
+	margin: 0 auto;
+	width:30%;
+}
+
+

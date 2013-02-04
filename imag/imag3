@@ -16,21 +16,26 @@
 	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 	<meta name="generator" content="Geany 0.20" />
 	
-	<link rel="stylesheet" type="text/css" href="res/tpl/main.css">
-	<link rel="stylesheet" type="text/css" href="res/tpl/josi.css">
-	<link rel="stylesheet" type="text/css" href="res/tpl/waiter/waiter.css">
-	<link rel="stylesheet" type="text/css" href="res/tpl/css.css">
+	<!--стили-->
+	<link rel="stylesheet" type="text/css" href="res/tpl/main.css"/>
+	<link rel="stylesheet" type="text/css" href="res/tpl/josi.css"/>
+	<link rel="stylesheet" type="text/css" href="res/tpl/waiter/waiter.css"/>
+	<link rel="stylesheet" type="text/css" href="res/tpl/css.css"/>
 	
+	<!--framework-->
 	<!--link rel="stylesheet" type="text/css" href="../release/dijit/themes/claro/claro.css"-->
-	<link rel="stylesheet" type="text/css" href="../jquery/css/ui-lightness/jquery-ui-1.8.18.custom.css">
+	<link rel="stylesheet" type="text/css" href="../jquery/css/ui-lightness/jquery-ui-1.8.18.custom.css"/>
 	
+	<!--javasctipt-->
+
 	<!--google analistics-->	
 	{{f:tpl^page_path:res/tpl/aquaon/google_analistics_code.tpl}}
 	
 	<!--yandex metric-->	
 	{{f:tpl^page_path:res/tpl/aquaon/yandex_metric_code_.tpl}}
 	
-	<script>
+	<!--DoJo-->
+	<!--script>
 		var dojoConfig = 
 		{
 			async:true,
@@ -50,41 +55,35 @@
 				//"res":"../../aquaon/res",
 			},
 		};
-	</script>
+	</script-->
 	
-	<!--script src="config.js"></script-->
+	<script src="dojo_config.js"></script>
 	
-	<!--продуктивные скрипты-->
-	<!--script src="res/josi_lib/js/release/dojo/dojo/dojo.js"></script>
-	<!--script src="../release/dojo/dojo.js"></script-->
+	<!--продуктивный билд-->
+	<!--script src="res/josi/js/dojo/release/dojo/dojo/dojo.js"></script>
 	
-	<script src="res/josi_lib/js/dev/dojo/dojo/dojo.js"></script>
-	<!--script src="../dojo/dojo/dojo.js"></script-->
+	<!--отладочный-->
+	<script src="res/josi/js/dojo/dev/dojo/dojo.js"></script>
 	
-	<!--продуктивные скрипты-->
-	<!--script src="../dojo/dev/dojo/dojo.js"></script>
-	
-	<!--отладочные скрипты-->
-	<!--script src="../dojo-release-1.7.2-src/dojo/dojo.js"></script-->
-	
+	<!--jquery
 	<script src="../jquery/jquery-1.7.2.min.js"></script>
 	<script src="../jquery/js/jquery-ui-1.8.20.custom.min.js"></script>
+	<script src="../jquery/development-bundle/ui/i18n/jquery.ui.datepicker-ru.js"></script>-->
 	
-	<script src="../jquery/development-bundle/ui/i18n/jquery.ui.datepicker-ru.js"></script>
 	
 	<script>
-	
-		
-		var unjax=null;
-		var josi_store=null;
-		var store=null;
-		var struct_res_arr=null;		//структурные ресурсы
-		var task_arr=null;
-		
+
+		//var unjax=null;
+		//var josi_store=null;
+		//var store=null;
+		//var struct_res_arr=null;		//структурные ресурсы
+		//var task_arr=null;
+		/*
 		var dojo_console=console;
 		
 		var console=
 		{
+			deb_group:"josi",
 			//deb_group:"josi_store",
 			//deb_group:"ttask",
 			//deb_group:"josi_form",
@@ -160,6 +159,8 @@
 			}
 		}
 		
+		*/
+		
 		require(
 		//["tlib/tlib"],
 		[],
@@ -167,28 +168,60 @@
 		{
 			require(
 			[	
-				"dojo",
-				"dojox/timing",
-				"tlib/tuti", 
-				"tlib/tkvl",
-				"tlib/tstore",
-				"tlib/tunjax",
-				"tlib/tpl",
-				"tlib/ttask",
-				"tlib/tres",
+				//"dojo",
+				//"dojox/timing",
+				//"tlib/tuti", 
+				//"tlib/tkvl",
+				//"tlib/tstore",
+				//"tlib/tunjax",
+				//"tlib/tpl",
+				//"tlib/ttask",
+				//"tlib/tres",
+				"tlib/tjosi",
 			],
 			function(
-				dojo,
-				t_timing,
-				t_uti,
-				t_kvl,
-				t_store,
-				t_unjax,
-				t_tpl,
-				t_task,
-				t_res)
+				//dojo,
+				//t_timing,
+				//t_uti,
+				//t_kvl,
+				//t_store,
+				//t_unjax,
+				//t_tpl,
+				//t_task,
+				//t_res,
+				t_josi)
 			{
+			
+			
+				console.log("trans", window);
 				
+				//console_1.log(window);
+				
+				//return;
+				
+				//конфигурация josi
+				var config=
+				{
+					source:"index.php",
+					unjax:
+					{
+						tick_time:100,
+						context:"unjax",
+					},
+					kvl_db_name:"kibicom_db-josi-9",
+				}
+				
+				
+				
+				//инициализация josi, запуск
+				t_josi.f_cre({config:config});
+				
+				
+				
+				//излучение события load
+				t_josi.f_ev_load_emit();
+			
+				return;
 				var source="https://localhost/webproj/lurelle.ru/index.php";
 				var source="index.php";
 				
@@ -202,11 +235,11 @@
 				
 				t_res.f_set_josi_store_url({josi_store_url:"index.php"});
 				
-				
+				//t_res.args.new_obj=123;
 				
 				//источник данных
 				//store=new t_store({source:source});
-				t_res.f_struct_res_arr_set({key:"store",val:store});
+				//t_res.f_struct_res_arr_set({key:"store",val:store});
 				t_res.f_struct_res_arr_set(
 				{
 					key:"store",
@@ -217,14 +250,14 @@
 					}
 				});
 				
-				t_tpl.constructor({store:store});
+				//t_tpl.constructor({store:store});
 				
 				//запоминаем имя таблицы хранящей клиентский kvl
 				t_res.f_struct_res_arr_set(
 				{
 					key:"kvl_db_name",
-					val:"db_josi_9",
-					//val:"kibicom_db-josi-9",
+					//val:"db_josi_9",
+					val:"kibicom_db-josi-9",
 				});
 				
 				console.log(t_task);
@@ -244,13 +277,13 @@
 				
 				//console.log(t_unjax.f_task_arr({context:"unjax"}));
 				
-				
+				//ставим в очередь заданий первое задание
+				//которое вызовет событие load 
 				t_task.f_put(
 				{
 					task_arr:t_unjax.f_task_arr({context:"unjax"}),
 					new_task:
 					{
-						//kvl_str:"f:josi_store_get",
 						kvl_str:"f:build_page^root_node_class_name:body",
 						is_active:true,
 						//emit_once:true,

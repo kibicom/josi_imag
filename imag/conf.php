@@ -30,7 +30,7 @@ $db_base_name_default="kibicom_db-josi-399";
 //$db_kvl_store_name_default="josi_venta";
 $db_auth_name_default="db_josi_3";
 //$db_auth_name_default="db_josi_3";
-$db_kvl_store_name_default="db_josi_9";
+$db_kvl_store_name_default="kibicom_db-josi-9";
 
 
 ?>

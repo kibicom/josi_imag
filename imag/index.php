@@ -34,6 +34,10 @@ if ($_SERVER['QUERY_STRING']==="")
 }
 
 require_once("res/josi/php/dev/index.php");
+<<<<<<< Updated upstream
+=======
+//require_once("../josi/index.php");
+>>>>>>> Stashed changes
 
 
 ?>

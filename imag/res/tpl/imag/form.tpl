@@ -9,7 +9,7 @@
 <div style="height: 40%;width: 70%;position: absolute;top: 30%;left: 15%;">
 	<div style="float: left;width: 60%;margin-top: -2%;">
 		
-		<DIV style="font-family: averia;font-size: 400%;text-align: center;color: #39F;text-shadow: 0px 0px 3px blue;">[НАИМЕНОВАНИЕ]</DIV>
+		<DIV style="font-family: averia;font-size: 400%;text-align: center;color: #39F;text-shadow: 0px 0px 3px blue;">Hand Made Toys</DIV>
 		<div style="font-size: 190%;text-align: center;color: #39F;">[СЛОГАН МАГАЗИНА]</div>
 	</div>
 	

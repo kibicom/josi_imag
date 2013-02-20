@@ -1,0 +1,13 @@
+
+
+<!--собираем параметры из хеша строки запроса-->
+
+f:fill_from_hash>
+		
+f:ev_inject^root_node_class_name:body>
+
+f:tpl_struct_arr^tpl_path:{{f:show_val^service&key:service}}&node_class_query:.service_div&struct_res_key:&parse_arr:false&replace:true&rooted:false&append:false&parse_arr:false&ev_inject:true>
+		
+f:item_list_alt^item_class_query:.josi_list_item&alt_class:josi_list_item_1_alt_stl_smpl>
+		
+f:build_jquery_datepicker^class_query:.jquery_datepicker>

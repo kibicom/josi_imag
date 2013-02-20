@@ -33,7 +33,11 @@ if ($_SERVER['QUERY_STRING']==="")
 	$_SERVER['QUERY_STRING']="kvl.0.f=tpl&kvl.1.page_path=imag3&kvl.1.service=res/tpl/imag/main.tpl";
 }
 
-require_once("../josi/index.php");
+require_once("res/josi/php/dev/index.php");
+<<<<<<< Updated upstream
+=======
+//require_once("../josi/index.php");
+>>>>>>> Stashed changes
 
 
 ?>
